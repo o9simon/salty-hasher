@@ -8,8 +8,16 @@ public class SaltyHasher {
 	public static final int INTERLACE_0 = 3;
 	public static final int INTERLACE_1 = 4;
 	
+	public String md5(String value, String salt) {
+		return md5(value, salt, BEFORE);
+	}
+	
 	public String md5(String value, String salt, int type) {
 		return (new Hasher()).md5(salt(value, salt, type));
+	}
+	
+	public String sha1(String value, String salt) {
+		return sha1(value, salt, BEFORE);
 	}
 	
 	public String sha1(String value, String salt, int type) {
